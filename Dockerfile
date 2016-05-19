@@ -30,7 +30,7 @@ RUN set -xe \
     && rm -rf /var/lib/apt/lists/* \
     && docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
         --with-png-dir=/usr/include --enable-gd-native-ttf \
-    && docker-php-ext-install -j$(nproc) bz2 gd intl mbstring mcrypt mysqli opcache pdo_mysql pcntl zip \
+    && docker-php-ext-install -j$(nproc) bz2 gd intl mbstring mcrypt mysql mysqli opcache pdo_mysql pcntl zip \
     && echo '' | pecl install imagick \
     && pecl install rar \
     && pecl install redis \
